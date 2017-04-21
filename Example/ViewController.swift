@@ -11,11 +11,11 @@ import TableTie
 
 struct Example {
     let text: String
-    let onSelect: ()->Void
+    let didSelect: ()->Void
     
-    init(_ text: String, _ onSelect: @escaping @autoclosure ()->Void) {
+    init(_ text: String, _ didSelect: @escaping @autoclosure ()->Void) {
         self.text = text
-        self.onSelect = onSelect
+        self.didSelect = didSelect
     }
 }
 
@@ -26,14 +26,12 @@ extension Example: Row {
     }
     
     func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        self.onSelect()
+        self.didSelect()
     }
 }
 
-class ViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-
+class ViewController: UITableViewController {
+    
     let tieAdapter = Adapter()
     
     override func viewDidLoad() {
@@ -53,4 +51,3 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: segueId, sender: nil)
     }
 }
-
