@@ -15,27 +15,27 @@ public class Adapter: NSObject {
         return sections[indexPath.section].rows[indexPath.row]
     }
     
-    override init() {
+    public override init() {
         super.init()
     }
     
-    init(_ sections:[Section<AnyRow>]) {
+    public init(_ sections:[Section<AnyRow>]) {
         super.init()
         
         set(sections)
     }
     
-    init(_ rows: [AnyRow]) {
+    public init(_ rows: [AnyRow]) {
         super.init()
         
         set(rows)
     }
     
-    func set(_ sections: [Section<AnyRow>]) {
+    public func set(_ sections: [Section<AnyRow>]) {
         self.sections = sections
     }
     
-    func set(_ rows: [AnyRow]) {
+    public func set(_ rows: [AnyRow]) {
         set([Section(nil, footer: nil, rows)])
     }
 }

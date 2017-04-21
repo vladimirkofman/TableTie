@@ -13,7 +13,7 @@ public struct Section<T> {
     let footer: String?
     var rows: [T]
     
-    init(_ header: String? = nil, footer: String? = nil, _ rows: [T]) {
+    public init(_ header: String? = nil, footer: String? = nil, _ rows: [T]) {
         self.header = header
         self.footer = footer
         self.rows = rows
