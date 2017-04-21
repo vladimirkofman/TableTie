@@ -11,7 +11,7 @@ import UIKit
 public protocol AnyRow {
     var reuseIdentifier: String { get }
     var rowHeight: CGFloat { get }
-    func didSelect()
+    func didSelectRow(of tableView: UITableView, at indexPath: IndexPath)
     
     func _dequeueCell(tableView: UITableView) -> UITableViewCell
     func _configure(cell: UITableViewCell)
@@ -21,5 +21,5 @@ public extension AnyRow {
     var reuseIdentifier: String { return String(describing: type(of: self)) }
     var rowHeight: CGFloat { return 44 }
     
-    func didSelect() {} // empty implementation
+    func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {}
 }

@@ -73,6 +73,6 @@ extension Adapter: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        row(for: indexPath).didSelect()
+        row(for: indexPath).didSelectRow(of: tableView, at: indexPath)
     }
 }

@@ -9,37 +9,48 @@
 import UIKit
 import TableTie
 
-//struct Artist {}
-//
-//extension Artist: Row {
-//    var reuseIdentifier: String { return "storyboardCell" }
-//    
-//    var rowHeight: CGFloat { return 80 }
-//    
-//    func configure(cell: UITableViewCell) {
-//        cell.textLabel?.text = "STORYBOARD CELL"
-//    }
-//    
-//    func didSelect() {
-//        print("Selected Artist")
-//    }
-//}
+struct Example {
+    let text: String
+    let onSelect: ()->Void
+    
+    init(_ text: String, _ onSelect: @escaping @autoclosure ()->Void) {
+        self.text = text
+        self.onSelect = onSelect
+    }
+}
 
+extension Example: Row {
+    func configure(cell: UITableViewCell) {
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = "Example \(text)"
+    }
+    
+    func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.onSelect()
+    }
+}
 
 class ViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
 
-//    let adapter = Adapter([Section("Haha", [Artist()])])
+    let tieAdapter = Adapter()
     
     override func viewDidLoad() {
+        tieAdapter.set([
+            Example("One", self.performSegue(withIdentifier: "Ex1", sender: nil)),
+            Example("Two", self.performSegue(withIdentifier: "Ex1", sender: nil)),
+            Example("Three", self.performSegue(withIdentifier: "Ex1", sender: nil)),
+            ])
+        
+        tableView.delegate = tieAdapter
+        tableView.dataSource = tieAdapter
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func showExample(_ segueId: String) {
+        performSegue(withIdentifier: segueId, sender: nil)
     }
-
-
 }
 

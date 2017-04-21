@@ -11,7 +11,7 @@ import Foundation
 public struct Section<T> {
     let header: String?
     let footer: String?
-    var rows: [T]
+    let rows: [T]
     
     public init(_ header: String? = nil, footer: String? = nil, _ rows: [T]) {
         self.header = header
