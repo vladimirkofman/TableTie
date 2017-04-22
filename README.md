@@ -1,8 +1,8 @@
 # TableTie
 Hassle-free **UITableViewDataSource** and **UITableViewDelegate** implementation
 
-### The Goal
-To provide a simple, generic way to populate a UITableView with data.  
+## The Goal
+#### To provide a simple, generic way to populate a UITableView with data.  
 *Totally inspired by
 [Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
 
@@ -21,7 +21,7 @@ struct Album {
 class SongCell: UITableViewCell {}
 class AlbumCell: UITableViewCell {}
 ```
-You'll need your models to conform to TableTie.Row protocol. There's only one required method that you'll need to implementation: `func configure(cell:)`. In this method you'll configure your cell according to your model. Make sure to use the correct type for the `cell:` parameter: it's generic, and will work for any subclass of `UITableViewCell`.
+You'll need your models to conform to TableTie.Row protocol. There's only one required method that you'll need to implement: `func configure(cell:)`. In this method you'll configure your cell according to your model. Make sure to use the correct type for the `cell:` parameter: it's generic, and will work for any subclass of `UITableViewCell`.
 
 ```swift
 extension Song: TableTie.Row {
@@ -56,7 +56,7 @@ class MyVC: UITableViewController {
 ```
 Don't forget to set .delegate and .dataSource for the tableView to the `TableTie.Adapter` instance you've created earlier.    
 
-And that's all!  
+##### And that's all!  
 *Please read on for more options...*
 
 ### Sections
