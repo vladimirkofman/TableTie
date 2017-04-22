@@ -53,7 +53,7 @@ class MyVC: UITableViewController {
 ```
 Don't forget to set .delegate and .dataSource for the tableView to the `TableTie.Adapter` instance you've created earlier.    
 
-##### And that's all!  
+#### And that's all!  
 *Please read on for more options...*
 
 ### Sections
