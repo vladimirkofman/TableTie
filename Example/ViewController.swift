@@ -37,8 +37,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         tieAdapter.set([
             Example("Custom Cells", self.performSegue(withIdentifier: "Ex1", sender: nil)),
-            Example("Custom Cells from Storyboard", self.performSegue(withIdentifier: "Ex2", sender: nil)),
-            Example("More...", self.performSegue(withIdentifier: "Ex3", sender: nil)),
+            Example("Storyboard cells", self.performSegue(withIdentifier: "Ex2", sender: nil)),
+            //Example("More...", self.performSegue(withIdentifier: "Ex3", sender: nil)),
             ])
         
         tableView.delegate = tieAdapter
