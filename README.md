@@ -50,7 +50,7 @@ let tieAdapter =
 ...
 ```
 
-## Sections
+### Sections
 ```swift
 ...
 let tieAdapter = Adapter([
@@ -66,7 +66,7 @@ let tieAdapter = Adapter([
 ...
 ```
 
-## Custom cells
+### Custom cells
 Sure, just put the right type for the cell in `func configure(cell:)`:
 ```swift
 class YourCustomCell: UITableViewCell {}
@@ -79,7 +79,7 @@ extension Song: TableTie.Row {
 ```
 `TableTie` will automatically register your cell for `UITableViewCell` reuse. If you want to have specific `reuseIdentifier`, take a look at the next section.
 
-## Cells from a storyboard
+### Cells from a storyboard
 No problem, just let it know the `reuseIdentifier`:
 ```swift
 extension Song: TableTie.Row {
@@ -91,7 +91,7 @@ extension Song: TableTie.Row {
 }
 ```
 
-## Row height
+### Row height
 ```swift
 extension Song: TableTie.Row {
     var reuseIdentifier: String { return "reuseMePlease" }
@@ -100,5 +100,17 @@ extension Song: TableTie.Row {
     func configure(cell: YourStoryboardCell) {
         //Do what you have to do here...
     }
+}
+```
+
+### Row selection
+* Option 1: Override `didSelectRow` for the item
+```swift
+extension Song: TableTie.Row {
+...
+    func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {
+        // Implement your logic here...
+    }
+...
 }
 ```
