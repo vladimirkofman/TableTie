@@ -9,6 +9,9 @@
 import UIKit
 
 public class Adapter: NSObject {
+    
+    public var didSelect: ((AnyRow, UITableView, IndexPath)->Void)? = nil
+    
     fileprivate var sections: [Section<AnyRow>] = []
     
     fileprivate func row(for indexPath: IndexPath) -> AnyRow {
@@ -73,6 +76,9 @@ extension Adapter: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        row(for: indexPath).didSelectRow(of: tableView, at: indexPath)
+        let row = self.row(for: indexPath)
+        
+        row.didSelectRow(of: tableView, at: indexPath)
+        self.didSelect?(row, tableView, indexPath)
     }
 }
