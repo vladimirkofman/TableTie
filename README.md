@@ -115,3 +115,14 @@ tieAdapter.didSelect = { row, tableView, indexPath in
 }
 ...
 ```
+
+# Installation
+
+## CocoaPods
+
+You can install TableTie via CocoaPods by adding it to your `Podfile`:
+```
+pod 'TableTie'
+```
+
+And run `pod install`.
