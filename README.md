@@ -77,7 +77,7 @@ extension Song: TableTie.Row {
     }
 }
 ```
-`TableTie` will automatically register your cell for `UITableViewCell` reuse. If you want to have specific `reuseIdentifier`, take a look at the next section.
+`TableTie` will automatically register your cell for `UITableViewCell` reuse. If you need to use a specific `reuseIdentifier`, take a look at the next section.
 
 ### Cells from a storyboard
 No problem, just let it know the `reuseIdentifier`:
@@ -104,7 +104,7 @@ extension Song: TableTie.Row {
 ```
 
 ### Row selection
-* Option 1: Override `didSelectRow` for the item
+* Option 1: Override `didSelectRow` for the row
 ```swift
 extension Song: TableTie.Row {
 ...

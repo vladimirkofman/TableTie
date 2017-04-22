@@ -16,11 +16,36 @@
 		6DF756A51EAA411200692854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF756A31EAA411200692854 /* Main.storyboard */; };
 		6DF756A71EAA411200692854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DF756A61EAA411200692854 /* Assets.xcassets */; };
 		6DF756AA1EAA411200692854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF756A81EAA411200692854 /* LaunchScreen.storyboard */; };
-		6DF756AF1EAA413100692854 /* TableTie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF756861EAA400E00692854 /* TableTie.framework */; };
 		6DF756B11EAA81F600692854 /* Ex1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756B01EAA81F600692854 /* Ex1.swift */; };
 		6DF756B31EAAA79500692854 /* Ex2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756B21EAAA79500692854 /* Ex2.swift */; };
 		6DF756B71EAAA80900692854 /* Ex3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756B61EAAA80900692854 /* Ex3.swift */; };
+		6DF756B81EABBCB800692854 /* TableTie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF756861EAA400E00692854 /* TableTie.framework */; };
+		6DF756B91EABBCB800692854 /* TableTie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF756861EAA400E00692854 /* TableTie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6DF756BA1EABBCB800692854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DF7567D1EAA400E00692854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DF756851EAA400E00692854;
+			remoteInfo = TableTie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6DF756BC1EABBCB800692854 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6DF756B91EABBCB800692854 /* TableTie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6DF756861EAA400E00692854 /* TableTie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableTie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF756AF1EAA413100692854 /* TableTie.framework in Frameworks */,
+				6DF756B81EABBCB800692854 /* TableTie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,10 +169,12 @@
 				6DF756991EAA411200692854 /* Sources */,
 				6DF7569A1EAA411200692854 /* Frameworks */,
 				6DF7569B1EAA411200692854 /* Resources */,
+				6DF756BC1EABBCB800692854 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6DF756BB1EABBCB800692854 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -239,6 +266,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6DF756BB1EABBCB800692854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DF756851EAA400E00692854 /* TableTie */;
+			targetProxy = 6DF756BA1EABBCB800692854 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6DF756A31EAA411200692854 /* Main.storyboard */ = {
@@ -403,6 +438,7 @@
 		6DF756AD1EAA411200692854 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -415,6 +451,7 @@
 		6DF756AE1EAA411200692854 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
