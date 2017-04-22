@@ -22,7 +22,7 @@ struct Example {
 extension Example: Row {
     func configure(cell: UITableViewCell) {
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "Example \(text)"
+        cell.textLabel?.text = text
     }
     
     func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {
@@ -36,9 +36,9 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         tieAdapter.set([
-            Example("One", self.performSegue(withIdentifier: "Ex1", sender: nil)),
-            Example("Two", self.performSegue(withIdentifier: "Ex1", sender: nil)),
-            Example("Three", self.performSegue(withIdentifier: "Ex1", sender: nil)),
+            Example("Custom Cells", self.performSegue(withIdentifier: "Ex1", sender: nil)),
+            Example("Custom Cells from Storyboard", self.performSegue(withIdentifier: "Ex2", sender: nil)),
+            Example("More...", self.performSegue(withIdentifier: "Ex3", sender: nil)),
             ])
         
         tableView.delegate = tieAdapter
