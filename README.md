@@ -1,28 +1,47 @@
 # TableTie
-Hassle-free and type-safe **UITableViewDataSource** and **UITableViewDelegate** implementation
+Hassle-free **UITableViewDataSource** and **UITableViewDelegate** implementation
 
-## Motivation
-Bla bla bla
-Bring your own model objects and cells
+### The Goal
+To provide a simple, generic way to populate a UITableView with data.  
+*Totally inspired by
+[Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
 
-## Solution
-Let's say you have a simple model object that you want to display in `UITableView`:
+## Hello World
+Let's say you have a list of Songs and Albums that you want to display in `UITableView`. Your models can be structs, classes, enums, or just Strings. Let's use structs for the example:
 ```swift
 struct Song {
     let title: String
 }
+
+struct Album {
+    let name: String
+    let artist: String
+}
+
+class SongCell: UITableViewCell {}
+class AlbumCell: UITableViewCell {}
 ```
-Here's how it would look like:
+You'll need your models to conform to TableTie.Row protocol. There's only one required method that you'll need to implementation: `func configure(cell:)`. In this method you'll configure your cell according to your model. Make sure to use the correct type for the `cell:` parameter: it's generic, and will work for any subclass of `UITableViewCell`.
+
 ```swift
 extension Song: TableTie.Row {
-    func configure(cell: UITableViewCell) {
+    func configure(cell: SongCell) {
         cell.textLabel?.text = title
     }
 }
 
+extension Album: TableTie.Row {
+    func configure(cell: AlbumCell) {
+        cell.textLabel?.text = "\(name) by \(artist)"
+    }
+}
+```
+In your view controller, you'll need to create an instance of `TableTie.Adapter`, and provide it with the array of your models.
+```swift
 class MyVC: UITableViewController {  
     let tieAdapter =
       TableTie.Adapter([
+          Album(name: "Paranoid", artist:"Black Sabbath"),
           Song(title: "War Pigs"),
           Song(title: "Paranoid"),
           Song(title: "Planet Caravan")])
@@ -35,20 +54,10 @@ class MyVC: UITableViewController {
     }
 }
 ```
-## Explain about the overriding func
+Don't forget to set .delegate and .dataSource for the tableView to the `TableTie.Adapter` instance you've created earlier.    
 
-## Distinct - CHANGEME model types in the same UITableView
-Yes, you can have `Artist`s and `Song`s (or whatever you want) in the same table:
-```swift
-...
-let tieAdapter =
-  TableTie.Adapter([
-      Artist(name: "Black Sabbath"),
-      Song(title: "War Pigs"),
-      Song(title: "Paranoid"),
-      Song(title: "Planet Caravan")])
-...
-```
+And that's all!  
+*Please read on for more options...*
 
 ### Sections
 ```swift
@@ -66,21 +75,8 @@ let tieAdapter = Adapter([
 ...
 ```
 
-### Custom cells
-Sure, just put the right type for the cell in `func configure(cell:)`:
-```swift
-class YourCustomCell: UITableViewCell {}
-
-extension Song: TableTie.Row {
-    func configure(cell: YourCustomCell) { // <-- HERE
-        //Do what you have to do here...
-    }
-}
-```
-`TableTie` will automatically register your cell for `UITableViewCell` reuse. If you need to use a specific `reuseIdentifier`, take a look at the next section.
-
-### Cells from a storyboard
-No problem, just let it know the `reuseIdentifier`:
+### Custom reuseIdentifier and Storyboard support
+`TableTie` will automagically register your cell for `UITableViewCell` reuse. If you need to use a specific `reuseIdentifier`, or if you've designed your cell in a storyboard, just override the `reuseIdentifier` property of `TableTie.Row`:
 ```swift
 extension Song: TableTie.Row {
     var reuseIdentifier: String { return "reuseMePlease" } // <-- HERE
