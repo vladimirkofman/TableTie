@@ -37,13 +37,42 @@ class MyVC: UITableViewController {
 ```
 ## Explain about the overriding func
 
+## Distinct - CHANGEME model types in the same UITableView
+Yes, you can have `Artist`s and `Song`s (or whatever you want) in the same table:
+```swift
+...
+let tieAdapter =
+  TableTie.Adapter([
+      Artist(name: "Black Sabbath"),
+      Song(title: "War Pigs"),
+      Song(title: "Paranoid"),
+      Song(title: "Planet Caravan")])
+...
+```
+
+## Sections
+```swift
+...
+let tieAdapter = Adapter([
+        Section("Album", [
+            Album(name: "Paranoid", artist:"Black Sabbath"),
+        ]),
+        Section("Side one", [
+            Song(title: "War Pigs"),
+            Song(title: "Paranoid"),
+            Song(title: "Planet Caravan"),
+            Song(title: "Iron Man"),
+        ])])
+...
+```
+
 ## Custom cells
 Sure, just put the right type for the cell in `func configure(cell:)`:
 ```swift
 class YourCustomCell: UITableViewCell {}
 
 extension Song: TableTie.Row {
-    func configure(cell: YourCustomCell) {
+    func configure(cell: YourCustomCell) { // <-- HERE
         //Do what you have to do here...
     }
 }
@@ -60,17 +89,6 @@ extension Song: TableTie.Row {
         //Do what you have to do here...
     }
 }
-```
-## Distinct - CHANGEME model types in the same UITableView
-```swift
-...
-let tieAdapter =
-  TableTie.Adapter([
-      Artist(name: "Black Sabbath"),
-      Song(title: "War Pigs"),
-      Song(title: "Paranoid"),
-      Song(title: "Planet Caravan")])
-...
 ```
 
 ## Row height
