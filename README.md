@@ -59,11 +59,11 @@ Don't forget to set .delegate and .dataSource for the tableView to the `TableTie
 ### Sections
 ```swift
 ...
-let tieAdapter = Adapter([
-        Section("Album", [
+let tieAdapter = TableTie.Adapter([
+        TableTie.Section("Album", [
             Album(name: "Paranoid", artist:"Black Sabbath"),
         ]),
-        Section("Side one", [
+        TableTie.Section("Side one", [
             Song(title: "War Pigs"),
             Song(title: "Paranoid"),
             Song(title: "Planet Caravan"),
