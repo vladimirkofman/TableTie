@@ -1,8 +1,5 @@
-# TableTie
-Hassle-free **UITableViewDataSource** and **UITableViewDelegate** implementation
-
-## The Goal
-#### To provide a simple, generic way to populate a UITableView with data.  
+# The Goal
+### To provide a simple, generic way to populate a UITableView with data.  
 *Totally inspired by
 [Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
 
