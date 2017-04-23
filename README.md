@@ -1,5 +1,6 @@
-# TableTie   ![Platform support](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square) [![GitHub release](https://img.shields.io/github/release/vladimirkofman/tabletie.svg?maxAge=3600)](https://github.com/vladimirkofman/TableTie/releases) ![Build Status](https://img.shields.io/travis/vladimirkofman/TableTie/master.svg?style=flat-square)
-### A simple, generic way to populate a UITableView with data.  
+# TableTie   
+![Platform support](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square) [![GitHub release](https://img.shields.io/github/release/vladimirkofman/tabletie.svg?maxAge=3600)](https://github.com/vladimirkofman/TableTie/releases) ![Build Status](https://img.shields.io/travis/vladimirkofman/TableTie/master.svg?style=flat-square)
+## A simple, generic way to populate a `UITableView` with data.  
 *Inspired by
 [Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
 
