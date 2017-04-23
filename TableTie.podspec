@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author           = { "Vladimir Kofman" => "vladimir@kofman.com" }
   s.social_media_url = "http://twitter.com/VladimirK"
   s.source           = { :git => "https://github.com/vladimirkofman/TableTie.git", :tag => "v1.0.1" }
-  s.ios.deployment_target     = '9.3'
+  s.ios.deployment_target     = '9.0'
   s.requires_arc = true
   s.source_files     = 'TableTie/**/*.swift'
 end
