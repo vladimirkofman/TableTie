@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct Section<T> {
+public struct Section {
     let header: String?
     let footer: String?
-    let rows: [T]
+    let rows: [AnyRow]
     
-    public init(_ header: String? = nil, footer: String? = nil, _ rows: [T]) {
+    public init(_ header: String? = nil, footer: String? = nil, _ rows: [AnyRow]) {
         self.header = header
         self.footer = footer
         self.rows = rows

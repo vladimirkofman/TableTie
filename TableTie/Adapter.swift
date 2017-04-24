@@ -12,7 +12,8 @@ public class Adapter: NSObject {
     
     public var didSelect: ((AnyRow, UITableView, IndexPath)->Void)? = nil
     
-    fileprivate var sections: [Section<AnyRow>] = []
+    fileprivate var sections: [Section] = []
+    fileprivate var selectClosures: [IndexPath : ()->Void] = [:]
     
     fileprivate func row(for indexPath: IndexPath) -> AnyRow {
         return sections[indexPath.section].rows[indexPath.row]
@@ -22,7 +23,7 @@ public class Adapter: NSObject {
         super.init()
     }
     
-    public init(_ sections:[Section<AnyRow>]) {
+    public init(_ sections:[Section]) {
         super.init()
         
         set(sections)
@@ -34,8 +35,23 @@ public class Adapter: NSObject {
         set(rows)
     }
     
-    public func set(_ sections: [Section<AnyRow>]) {
-        self.sections = sections
+    public func set(_ sections: [Section]) {
+        self.sections = []
+        self.selectClosures = [:]
+        
+        for (sectionIndex, section) in sections.enumerated() {
+            var rows:[AnyRow] = []
+            
+            for (rowIndex, var row) in section.rows.enumerated() {
+                if let selectableRow = row as? SelectableRow {
+                    row = selectableRow.row
+                    selectClosures[IndexPath(row: rowIndex, section: sectionIndex)] = selectableRow.selectClosure
+                }
+                
+                rows.append(row)
+            }
+            self.sections.append(Section(section.header, footer: section.footer, rows))
+        }
     }
     
     public func set(_ rows: [AnyRow]) {
@@ -77,6 +93,8 @@ extension Adapter: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = self.row(for: indexPath)
+        
+        selectClosures[indexPath]?()
         
         row.didSelectRow(of: tableView, at: indexPath)
         self.didSelect?(row, tableView, indexPath)

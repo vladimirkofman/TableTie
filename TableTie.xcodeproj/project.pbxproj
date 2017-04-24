@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D4555511EAE8C3800B3EF3C /* SelectableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4555501EAE8C3800B3EF3C /* SelectableRow.swift */; };
 		6DF756951EAA406300692854 /* AnyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756911EAA406300692854 /* AnyRow.swift */; };
 		6DF756961EAA406300692854 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756921EAA406300692854 /* Row.swift */; };
 		6DF756971EAA406300692854 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756931EAA406300692854 /* Section.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6D4555501EAE8C3800B3EF3C /* SelectableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableRow.swift; sourceTree = "<group>"; };
 		6DF756861EAA400E00692854 /* TableTie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableTie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF7568A1EAA400E00692854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF756911EAA406300692854 /* AnyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRow.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				6DF756911EAA406300692854 /* AnyRow.swift */,
 				6DF756921EAA406300692854 /* Row.swift */,
+				6D4555501EAE8C3800B3EF3C /* SelectableRow.swift */,
 				6DF756931EAA406300692854 /* Section.swift */,
 				6DF756941EAA406300692854 /* Adapter.swift */,
 				6DF7568A1EAA400E00692854 /* Info.plist */,
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DF756981EAA406300692854 /* Adapter.swift in Sources */,
+				6D4555511EAE8C3800B3EF3C /* SelectableRow.swift in Sources */,
 				6DF756971EAA406300692854 /* Section.swift in Sources */,
 				6DF756961EAA406300692854 /* Row.swift in Sources */,
 				6DF756951EAA406300692854 /* AnyRow.swift in Sources */,
@@ -489,6 +493,7 @@
 				6DF756AE1EAA411200692854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,11 +11,9 @@ import TableTie
 
 struct Example {
     let text: String
-    let didSelect: ()->Void
     
-    init(_ text: String, _ didSelect: @escaping @autoclosure ()->Void) {
+    init(_ text: String) {
         self.text = text
-        self.didSelect = didSelect
     }
 }
 
@@ -23,10 +21,6 @@ extension Example: Row {
     func configure(cell: UITableViewCell) {
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = text
-    }
-    
-    func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {
-        self.didSelect()
     }
 }
 
@@ -36,9 +30,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         tieAdapter.set([
-            Example("Custom Cells", self.performSegue(withIdentifier: "Ex1", sender: nil)),
-            Example("Storyboard cells", self.performSegue(withIdentifier: "Ex2", sender: nil)),
-            //Example("More...", self.performSegue(withIdentifier: "Ex3", sender: nil)),
+            SelectableRow(Example("Custom Cells"), self.showExample("Ex1")),
+            SelectableRow(Example("Storyboard cells"), self.showExample("Ex2")),
             ])
         
         tableView.delegate = tieAdapter
