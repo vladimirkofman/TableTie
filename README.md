@@ -4,11 +4,11 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Platform support](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ReSwift/ReSwift/blob/master/LICENSE.md)
-## A simple, generic way to populate a `UITableView` with data.  
+### A simple, generic way to populate a `UITableView` with data.  
 *Inspired by
 [Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
 
-## Hello World
+## Usage
 Let's say you have a list of Songs and Albums that you want to display in `UITableView`. Your models can be structs, classes, enums, or just Strings. Let's use structs for the example:
 ```swift
 struct Song {
