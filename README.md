@@ -128,6 +128,15 @@ pod 'TableTie'
 
 And run `pod install`.
 
+### Carthage
+
+Add this to your Cartfile:
+```
+github "vladimirkofman/TableTie"
+```
+
+Then run `carthage update`.
+
 ## License
 
 TableTie is available under the MIT license. See the LICENSE file for more info.
