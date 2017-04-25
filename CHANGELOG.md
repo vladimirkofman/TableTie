@@ -1,3 +1,6 @@
+# 1.0.4
+- Updated documentation
+- Added Tests
 # 1.0.3
 ### Introducing SelectableRow
 Now it's even easier to define actions on select row:
