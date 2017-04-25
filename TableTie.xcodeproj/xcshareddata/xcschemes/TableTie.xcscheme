@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D8C43F91EAFCA9C002FB490"
+               BuildableName = "TableTieTests.xctest"
+               BlueprintName = "TableTieTests"
+               ReferencedContainer = "container:TableTie.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6DF756851EAA400E00692854"
+            BuildableName = "TableTie.framework"
+            BlueprintName = "TableTie"
+            ReferencedContainer = "container:TableTie.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
