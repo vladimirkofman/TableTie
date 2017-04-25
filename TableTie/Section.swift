@@ -8,9 +8,17 @@
 
 import Foundation
 
+/**
+ Stores the information about a section in a UITableView
+ */
 public struct Section {
+    /// header title
     let header: String?
+    
+    /// footer title
     let footer: String?
+    
+    /// rows
     let rows: [AnyRow]
     
     public init(_ header: String? = nil, footer: String? = nil, _ rows: [AnyRow]) {

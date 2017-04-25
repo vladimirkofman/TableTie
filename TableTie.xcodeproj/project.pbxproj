@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D4555511EAE8C3800B3EF3C /* SelectableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4555501EAE8C3800B3EF3C /* SelectableRow.swift */; };
+		6D8C43FD1EAFCA9C002FB490 /* TableTieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C43FC1EAFCA9C002FB490 /* TableTieTests.swift */; };
+		6D8C43FF1EAFCA9C002FB490 /* TableTie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF756861EAA400E00692854 /* TableTie.framework */; };
 		6DF756951EAA406300692854 /* AnyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756911EAA406300692854 /* AnyRow.swift */; };
 		6DF756961EAA406300692854 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756921EAA406300692854 /* Row.swift */; };
 		6DF756971EAA406300692854 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF756931EAA406300692854 /* Section.swift */; };
@@ -25,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6D8C44001EAFCA9C002FB490 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DF7567D1EAA400E00692854 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DF756851EAA400E00692854;
+			remoteInfo = TableTie;
+		};
 		6DF756BA1EABBCB800692854 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6DF7567D1EAA400E00692854 /* Project object */;
@@ -50,6 +59,9 @@
 
 /* Begin PBXFileReference section */
 		6D4555501EAE8C3800B3EF3C /* SelectableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableRow.swift; sourceTree = "<group>"; };
+		6D8C43FA1EAFCA9C002FB490 /* TableTieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableTieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8C43FC1EAFCA9C002FB490 /* TableTieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTieTests.swift; sourceTree = "<group>"; };
+		6D8C43FE1EAFCA9C002FB490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF756861EAA400E00692854 /* TableTie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableTie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF7568A1EAA400E00692854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF756911EAA406300692854 /* AnyRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyRow.swift; sourceTree = "<group>"; };
@@ -69,6 +81,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6D8C43F71EAFCA9C002FB490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8C43FF1EAFCA9C002FB490 /* TableTie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DF756821EAA400E00692854 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,11 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D8C43FB1EAFCA9C002FB490 /* TableTieTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D8C43FC1EAFCA9C002FB490 /* TableTieTests.swift */,
+				6D8C43FE1EAFCA9C002FB490 /* Info.plist */,
+			);
+			path = TableTieTests;
+			sourceTree = "<group>";
+		};
 		6DF7567C1EAA400E00692854 = {
 			isa = PBXGroup;
 			children = (
 				6DF756881EAA400E00692854 /* TableTie */,
 				6DF7569E1EAA411200692854 /* Example */,
+				6D8C43FB1EAFCA9C002FB490 /* TableTieTests */,
 				6DF756871EAA400E00692854 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +131,7 @@
 			children = (
 				6DF756861EAA400E00692854 /* TableTie.framework */,
 				6DF7569D1EAA411200692854 /* Example.app */,
+				6D8C43FA1EAFCA9C002FB490 /* TableTieTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +178,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6D8C43F91EAFCA9C002FB490 /* TableTieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8C44041EAFCA9C002FB490 /* Build configuration list for PBXNativeTarget "TableTieTests" */;
+			buildPhases = (
+				6D8C43F61EAFCA9C002FB490 /* Sources */,
+				6D8C43F71EAFCA9C002FB490 /* Frameworks */,
+				6D8C43F81EAFCA9C002FB490 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8C44011EAFCA9C002FB490 /* PBXTargetDependency */,
+			);
+			name = TableTieTests;
+			productName = TableTieTests;
+			productReference = 6D8C43FA1EAFCA9C002FB490 /* TableTieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6DF756851EAA400E00692854 /* TableTie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DF7568E1EAA400E00692854 /* Build configuration list for PBXNativeTarget "TableTie" */;
@@ -194,6 +243,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Vladimir Kofman";
 				TargetAttributes = {
+					6D8C43F91EAFCA9C002FB490 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					6DF756851EAA400E00692854 = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
@@ -220,11 +273,19 @@
 			targets = (
 				6DF756851EAA400E00692854 /* TableTie */,
 				6DF7569C1EAA411200692854 /* Example */,
+				6D8C43F91EAFCA9C002FB490 /* TableTieTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6D8C43F81EAFCA9C002FB490 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DF756841EAA400E00692854 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +306,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6D8C43F61EAFCA9C002FB490 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8C43FD1EAFCA9C002FB490 /* TableTieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6DF756811EAA400E00692854 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +341,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6D8C44011EAFCA9C002FB490 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DF756851EAA400E00692854 /* TableTie */;
+			targetProxy = 6D8C44001EAFCA9C002FB490 /* PBXContainerItemProxy */;
+		};
 		6DF756BB1EABBCB800692854 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6DF756851EAA400E00692854 /* TableTie */;
@@ -299,6 +373,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6D8C44021EAFCA9C002FB490 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TableTieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kofman.TableTieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6D8C44031EAFCA9C002FB490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TableTieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kofman.TableTieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		6DF7568C1EAA400E00692854 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -468,6 +564,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D8C44041EAFCA9C002FB490 /* Build configuration list for PBXNativeTarget "TableTieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8C44021EAFCA9C002FB490 /* Debug */,
+				6D8C44031EAFCA9C002FB490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		6DF756801EAA400E00692854 /* Build configuration list for PBXProject "TableTie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

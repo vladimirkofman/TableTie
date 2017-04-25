@@ -8,33 +8,41 @@
 
 import UIKit
 
+/**
+ Partially implements UITableViewSource and UITableViewDelegate.
+ */
 public class Adapter: NSObject {
     
+    /// Closure to call when a row is selected
     public var didSelect: ((AnyRow, UITableView, IndexPath)->Void)? = nil
-    
+
     fileprivate var sections: [Section] = []
     fileprivate var selectClosures: [IndexPath : ()->Void] = [:]
     
     fileprivate func row(for indexPath: IndexPath) -> AnyRow {
         return sections[indexPath.section].rows[indexPath.row]
     }
-    
+
+    /// Creates an empty adapter
     public override init() {
         super.init()
     }
     
+    /// Initializes the adapter with the provided sections (that may contain rows)
     public init(_ sections:[Section]) {
         super.init()
         
         set(sections)
     }
     
+    /// Initializes the adapter with the provided rows (one default Section will be created)
     public init(_ rows: [AnyRow]) {
         super.init()
         
         set(rows)
     }
     
+    /// Updates the adapter with the provided sections
     public func set(_ sections: [Section]) {
         self.sections = []
         self.selectClosures = [:]
@@ -54,10 +62,13 @@ public class Adapter: NSObject {
         }
     }
     
+    /// Updates the adapter with rows (one default Section with empty header and footer will be created)
     public func set(_ rows: [AnyRow]) {
         set([Section(nil, footer: nil, rows)])
     }
 }
+
+//MARK: UITableViewDataSource implementation
 
 extension Adapter: UITableViewDataSource {
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,6 +96,8 @@ extension Adapter: UITableViewDataSource {
         return sections[section].footer
     }
 }
+
+//MARK: UITableViewDataDelegate implementation
 
 extension Adapter: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

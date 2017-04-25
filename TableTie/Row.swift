@@ -8,10 +8,18 @@
 
 import UIKit
 
+/**
+ All row items to be displayed should conform to this protocol.
+*/
 public protocol Row: AnyRow {
     associatedtype Cell: UITableViewCell
     
+    /// "Private" method, please don't override
     func _dequeueCell(tableView: UITableView, reuseIdentifier: String) -> UITableViewCell
+    
+    /**
+     The only required method to override. Please provide the correct type for cell parameter - cell will be automatically created and registered for later reuse.
+     */
     func configure(cell: Cell)
 }
 

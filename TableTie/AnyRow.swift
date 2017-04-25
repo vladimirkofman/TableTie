@@ -9,8 +9,8 @@
 import UIKit
 
 /**
- Acts as an abstract protocol for all row items to be displayed
- All row items should conform to this protocol through Row
+ Acts as an abstract protocol for all row items to be displayed.
+ All row items should conform to this protocol through Row.
  */
 public protocol AnyRow {
     
