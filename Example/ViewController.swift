@@ -9,18 +9,10 @@
 import UIKit
 import TableTie
 
-struct Example {
-    let text: String
-    
-    init(_ text: String) {
-        self.text = text
-    }
-}
-
-extension Example: Row {
-    func configure(cell: UITableViewCell) {
+extension String: Row {
+    public func configure(cell: UITableViewCell) {
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = text
+        cell.textLabel?.text = self
     }
 }
 
@@ -30,8 +22,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         tieAdapter.set([
-            SelectableRow(Example("Custom Cells"), self.showExample("Ex1")),
-            SelectableRow(Example("Storyboard cells"), self.showExample("Ex2")),
+            SelectableRow("Custom Cells", self.showExample("Ex1")),
+            SelectableRow("Storyboard Cells", self.showExample("Ex2")),
             ])
         
         tableView.delegate = tieAdapter
