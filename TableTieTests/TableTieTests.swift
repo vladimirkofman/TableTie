@@ -7,12 +7,27 @@
 //
 
 import XCTest
+@testable import TableTie
+
+extension String: Row {
+    public func configure(cell: UITableViewCell) {
+        cell.textLabel?.text = self
+    }
+}
 
 class TableTieTests: XCTestCase {
     
+    var adapter: Adapter!
+    var tableView: UITableView!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        adapter = Adapter()
+        tableView = UITableView(frame: CGRect.zero)
+        
+        tableView.dataSource = adapter
+        tableView.delegate = adapter
     }
     
     override func tearDown() {
@@ -20,16 +35,38 @@ class TableTieTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    //MARK: -
+    
+    func testEmptyAdapterInit() {
+        XCTAssertEqual(adapter.numberOfSections(in: tableView), 0)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testAdapterSetRows() {
+        let arr = ["a", "b", "c"]
+        adapter.set(arr)
+        
+        XCTAssertEqual(adapter.numberOfSections(in: UITableView()), 1)
+        XCTAssertEqual(adapter.tableView(tableView, numberOfRowsInSection: 0), arr.count)
+        
     }
+    
+    func testCellForRow() {
+        let arr = ["d", "e", "f", "g"]
+        adapter.set(arr)
+        
+        let testRowIndex = arr.count / 2
+        let cell = adapter.tableView(tableView, cellForRowAt: IndexPath(row: testRowIndex, section: 0))
+        XCTAssertEqual(cell.textLabel?.text, arr[testRowIndex])
+    
+        adapter.set([] as! [AnyRow])
+        XCTAssertEqual(adapter.numberOfSections(in: UITableView()), 1)
+    }
+    
+//        let arr2 = ["d", "e"]
+//        adapter.set(arr2)
+//        XCTAssertEqual(adapter.numberOfSections(in: UITableView()), 1)
+//        XCTAssertEqual(adapter.tableView(tableView, numberOfRowsInSection: 0), arr2.count)
+//    }
+    
     
 }
