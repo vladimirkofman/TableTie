@@ -104,7 +104,16 @@ extension Song: TableTie.Row {
 ```
 
 ### Row selection
-* Option 1: Override `didSelectRow` for the row
+* **Option 1:** Use `TableTie.SelectableRow` wrapper
+```swift
+...
+    tieAdapter.set([
+        SelectableRow(Song(title:"Paranoid"), self.playSong("Paranoid")),
+        SelectableRow(Song(title:"Iron Man"), self.playSong("Iron Man")),
+    ])
+...
+```
+* **Option 2:** Override `didSelectRow` for the row
 ```swift
 extension Song: TableTie.Row {
 ...
@@ -114,7 +123,7 @@ extension Song: TableTie.Row {
 ...
 }
 ```
-* Option 2: Set `didSelect` closure for `TableTie.Adapter`
+* **Option 3:** Set `didSelect` closure for `TableTie.Adapter`
 ```swift
 ...
 tieAdapter.didSelect = { row, tableView, indexPath in
