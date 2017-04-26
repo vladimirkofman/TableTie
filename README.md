@@ -3,6 +3,7 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/TableTie.svg)](https://img.shields.io/cocoapods/v/TableTie.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Code coverage status](https://img.shields.io/codecov/c/github/vladimirkofman/TableTie.svg?style=flat-square)](http://codecov.io/github/vladimirkofman/TableTie)
+[![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/TableTie.svg?maxAge=3600)](http://cocoadocs.org/docsets/TableTie)
 ![Platform support](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ReSwift/ReSwift/blob/master/LICENSE.md)
 ### A simple, generic way to populate a `UITableView` with data.  
