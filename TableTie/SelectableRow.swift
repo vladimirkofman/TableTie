@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- Serves as a wrapper for AnyRow and select closure. Conforms to Row, so it can be used as an input for Adapter. Adapter will identify `SelectableRow`'s instances, and will store the select closures for later.
+ Wrapper for AnyRow and select closure. Conforms to Row, so it can be used as an input for Adapter. Adapter will identify `SelectableRow`'s instances, and will store the select closures for later.
  */
 public struct SelectableRow: AnyRow {
     var selectClosure: ()->Void
