@@ -11,7 +11,7 @@
 [Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
 
 ## Features
-* Reduces boilerplate code by implementing the most [more more](#More Options) frequently used set of `UITableViewDelegate` and `UITableViewDataSource` methods.
+* Reduces boilerplate code by implementing the most [frequently used set](#More options) of `UITableViewDelegate` and `UITableViewDataSource` methods.
 * No need to change your models.
 * Supports multiple cell types in the same `UITableView`.
 * Supports cells created in code or in a storyboard.
