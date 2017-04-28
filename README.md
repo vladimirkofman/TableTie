@@ -6,9 +6,16 @@
 [![CocoaPods](https://img.shields.io/cocoapods/metrics/doc-percent/TableTie.svg?maxAge=3600)](http://cocoadocs.org/docsets/TableTie)
 ![Platform support](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat-square)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/ReSwift/ReSwift/blob/master/LICENSE.md)
-### A simple, generic way to populate a `UITableView` with data.  
+### A quick, generic way to populate a `UITableView` with data.  
 *Inspired by
 [Generic Table View Controllers](https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2 "Swift Talk") by [objc.io](https://www.objc.io/)*
+
+## Features
+* Reduces boilerplate code by implementing the most [more more](#More Options) frequently used set of `UITableViewDelegate` and `UITableViewDataSource` methods.
+* No need to change your models.
+* Supports multiple cell types in the same `UITableView`.
+* Supports cells created in code or in a storyboard.
+* Automatic cell registration for reuse.
 
 ## Usage
 Let's say you have a list of Songs and Albums that you want to display in `UITableView`. Your models can be structs, classes, enums, or just Strings. Let's use structs for the example:
@@ -25,7 +32,7 @@ struct Album {
 class SongCell: UITableViewCell {}
 class AlbumCell: UITableViewCell {}
 ```
-You'll need your models to conform to TableTie.Row protocol. There's only one required method that you'll need to implement: `func configure(cell:)`. In this method you'll configure your cell according to your model. Make sure to use the correct type for the `cell:` parameter: it's generic, and will work for any subclass of `UITableViewCell`.
+You'll need your models to conform to TableTie.Row protocol. There's only one required method that you'll need to implement: `configure(cell:)`. In this method you'll configure your cell according to your model. Make sure to use the correct type for the `cell:` parameter: it's generic, and will work for any subclass of `UITableViewCell`.
 
 ```swift
 extension Song: TableTie.Row {
@@ -131,6 +138,24 @@ tieAdapter.didSelect = { row, tableView, indexPath in
 }
 ...
 ```
+
+## More options
+`TableTie` provides a quick and simple solution for displaying arbitrary data in `UITableView` by implementing most frequently used set of  `UITableViewDataSource` and `UITableViewDelegate` methods. For more advanced options, you can subclass `TableTie.Adapter` and implement (or override) the relevant methods in your subclass.
+
+`TableTie.Adapter` implements the following methods:
+
+#### UITableViewDataSource
+* `numberOfSections(in:)`
+* `tableView(_:numberOfRowsInSection:)`
+* `tableView(_:cellForRowAt:)`
+* `tableView(_:titleForHeaderInSection:)`
+* `tableView(_:titleForFooterInSection:)`
+
+#### UITableViewDelegate
+* `tableView(_:heightForRowAt:)`
+* `tableView(_:didSelectRowAt:)`
+
+***
 
 ## Installation
 
