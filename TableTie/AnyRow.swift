@@ -37,7 +37,7 @@ public extension AnyRow {
     var reuseIdentifier: String { return String(describing: type(of: self)) }
     
     /// Default row height
-    var rowHeight: CGFloat { return UITableViewAutomaticDimension }
+    var rowHeight: CGFloat { return UITableView.automaticDimension }
     
     /// Do nothing by default
     func didSelectRow(of tableView: UITableView, at indexPath: IndexPath) {}
